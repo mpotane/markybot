@@ -65,6 +65,7 @@ export default function Home() {
         <div className="max-w-md fixed flex items-center justify-center gap-2 bottom-0 mb-8">
           <Input
             type="text"
+            pattern="^[a-zA-Z0-9\s\p{P}]+$"
             className="w-[20rem]"
             value={input}
             onChange={handleInputChange}
