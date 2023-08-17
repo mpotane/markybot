@@ -12,18 +12,46 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
+import { useSession, signIn, signOut } from "next-auth/react";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 
 export default function Home() {
   const { messages, input, handleInputChange, handleSubmit } = useChat();
+  const { data: session, status } = useSession();
 
   return (
     <main className="container">
       <header className="mx-auto max-w-lg">
         <nav className="flex items-center justify-between py-5">
-          <Button className="flex gap-2" variant="outline" size="sm">
-            <GitHubLogoIcon />
-            <p>Login with github</p>
-          </Button>
+          {status === "authenticated" ? (
+            <DropdownMenu>
+              <DropdownMenuTrigger asChild>
+                <Button variant="outline" size="sm">
+                  {session.user?.name}
+                </Button>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent>
+                <DropdownMenuItem onClick={() => signOut()}>
+                  Sign out
+                </DropdownMenuItem>
+              </DropdownMenuContent>
+            </DropdownMenu>
+          ) : (
+            <Button
+              className="flex gap-2"
+              variant="outline"
+              size="sm"
+              onClick={() => signIn("github", { callbackUrl: "/" })}
+            >
+              <GitHubLogoIcon />
+              <p>Login with github</p>
+            </Button>
+          )}
           <div>
             <ModeToggle />
           </div>
