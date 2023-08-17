@@ -88,13 +88,13 @@ export default function Home() {
       </section>
       <form
         onSubmit={handleSubmit}
-        className="mx-auto max-w-md w-full grid place-items-center"
+        className="container grid place-items-center"
       >
-        <div className="max-w-md fixed flex items-center justify-center gap-2 bottom-0 mb-8">
+        <div className="mx-auto w-full max-w-md fixed flex items-center justify-center gap-2 bottom-0 mb-8 p-5">
           <Input
             type="text"
             pattern="^[a-zA-Z0-9\s\p{P}]+$"
-            className="w-[20rem]"
+            className="md:w-[20rem]"
             value={input}
             onChange={handleInputChange}
           />
