@@ -28,7 +28,9 @@ export default function Home() {
     <main className="container">
       <header className="mx-auto max-w-lg">
         <nav className="flex items-center justify-between py-5">
-          {status === "authenticated" ? (
+          {status === "loading" ? (
+            <p>Loading...</p>
+          ) : status === "authenticated" ? (
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
                 <Button variant="outline" size="sm">
@@ -92,11 +94,12 @@ export default function Home() {
       >
         <div className="mx-auto w-full max-w-md fixed flex items-center justify-center gap-2 bottom-0 mb-8 p-5">
           <Input
-            type="text"
-            pattern="^[a-zA-Z0-9\s\p{P}]+$"
             className="md:w-[20rem]"
-            value={input}
+            maxLength={2048}
             onChange={handleInputChange}
+            pattern="^[a-zA-Z0-9\s\p{P}]+$"
+            type="text"
+            value={input}
           />
           <Button type="submit">Send</Button>
         </div>
