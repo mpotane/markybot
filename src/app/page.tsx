@@ -12,13 +12,18 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { useSession, signIn, signOut } from "next-auth/react";
+import { signIn, signOut, useSession } from "next-auth/react";
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
+import { MemoizedReactMarkdown } from "@/components/markdown";
+import remarkGfm from "remark-gfm";
+import remarkMath from "remark-math";
+import {Prism as SyntaxHighlighter} from 'react-syntax-highlighter'
+import {dark} from 'react-syntax-highlighter/dist/esm/styles/prism'
 
 export default function Home() {
   const { messages, input, handleInputChange, handleSubmit } = useChat();
@@ -78,10 +83,33 @@ export default function Home() {
               return (
                 <div
                   key={m.id}
-                  className={`${colorClassName} rounded-md mb-5 p-2 `}
+                  className={`${colorClassName} rounded-md mb-5 p-2`}
                 >
                   {m.role === "user" ? "🧑 " : "🤖 "}
-                  {m.content}
+                  <MemoizedReactMarkdown
+                    remarkPlugins={[remarkGfm, remarkMath]}
+                    components={{
+                      code({ node, inline, className, children, ...props }) {
+                        const match = /language-(\w+)/.exec(className || "");
+                        return !inline && match ? (
+                          <SyntaxHighlighter
+                            {...props}
+                            style={dark}
+                            language={match[1]}
+                            PreTag="div"
+                          >
+                            {String(children).replace(/\n$/, "")}
+                          </SyntaxHighlighter>
+                        ) : (
+                          <code {...props} className={className}>
+                            {children}
+                          </code>
+                        );
+                      },
+                    }}
+                  >
+                    {m.content}
+                  </MemoizedReactMarkdown>
                 </div>
               );
             })}
