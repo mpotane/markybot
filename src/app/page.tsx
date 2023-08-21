@@ -23,7 +23,7 @@ import { MemoizedReactMarkdown } from "@/components/markdown";
 import remarkGfm from "remark-gfm";
 import remarkMath from "remark-math";
 import {Prism as SyntaxHighlighter} from 'react-syntax-highlighter'
-import {dark} from 'react-syntax-highlighter/dist/esm/styles/prism'
+import {oneDark} from 'react-syntax-highlighter/dist/esm/styles/prism'
 
 export default function Home() {
   const { messages, input, handleInputChange, handleSubmit } = useChat();
@@ -94,7 +94,7 @@ export default function Home() {
                         return !inline && match ? (
                           <SyntaxHighlighter
                             {...props}
-                            style={dark}
+                            style={oneDark}
                             language={match[1]}
                             PreTag="div"
                           >
