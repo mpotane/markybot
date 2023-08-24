@@ -76,14 +76,14 @@ export default function Chat() {
             </CardHeader>
           </Card>
         ) : (
-          <ScrollArea className="mx-auto w-full max-w-md p-5 flex flex-col h-[30rem] bg-gradient-to-br from-pink-700 to-violet-700 rounded">
+          <ScrollArea className="mx-auto w-full max-w-md py-5 flex flex-col h-[30rem] bg-gradient-to-br from-pink-700 to-violet-700 rounded">
             {messages.map((m) => {
               const colorClassName =
                 m.role === "user" ? "bg-sky-600" : "bg-slate-50 text-black";
               return (
                 <div
                   key={m.id}
-                  className={`${colorClassName} rounded-md mb-5 p-2`}
+                  className={`${colorClassName} rounded-md mb-5 p-2 w-[25rem] mx-auto`}
                 >
                   {m.role === "user" ? "🧑 " : "🤖 "}
                   <MemoizedReactMarkdown
