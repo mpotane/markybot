@@ -22,8 +22,7 @@ import {
 import { MemoizedReactMarkdown } from "@/components/markdown";
 import remarkGfm from "remark-gfm";
 import remarkMath from "remark-math";
-import {Prism as SyntaxHighlighter} from 'react-syntax-highlighter'
-import {oneDark} from 'react-syntax-highlighter/dist/esm/styles/prism'
+import CodeBlock from "@/components/codeblock";
 
 export default function Chat() {
   const { messages, input, handleInputChange, handleSubmit } = useChat();
@@ -87,23 +86,26 @@ export default function Chat() {
                 >
                   {m.role === "user" ? "🧑 " : "🤖 "}
                   <MemoizedReactMarkdown
+                    className="relative"
                     remarkPlugins={[remarkGfm, remarkMath]}
                     components={{
                       code({ node, inline, className, children, ...props }) {
                         const match = /language-(\w+)/.exec(className || "");
-                        return !inline && match ? (
-                          <SyntaxHighlighter
+
+                        if (inline) {
+                          return (
+                            <code className={className} {...props}>
+                              {children}
+                            </code>
+                          );
+                        }
+
+                        return (
+                          <CodeBlock
+                            language={(match && match[1]) || ""}
+                            value={String(children).replace(/\n$/, "")}
                             {...props}
-                            style={oneDark}
-                            language={match[1]}
-                            PreTag="div"
-                          >
-                            {String(children).replace(/\n$/, "")}
-                          </SyntaxHighlighter>
-                        ) : (
-                          <code {...props} className={className}>
-                            {children}
-                          </code>
+                          />
                         );
                       },
                     }}
