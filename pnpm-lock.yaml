@@ -57,11 +57,11 @@ dependencies:
     specifier: 13.4.19
     version: 13.4.19(eslint@8.48.0)(typescript@5.2.2)
   langchain:
-    specifier: ^0.0.137
-    version: 0.0.137
+    specifier: ^0.0.138
+    version: 0.0.138
   lucide-react:
-    specifier: 0.271.0
-    version: 0.271.0(react@18.2.0)
+    specifier: 0.274.0
+    version: 0.274.0(react@18.2.0)
   next:
     specifier: 13.4.19
     version: 13.4.19(react-dom@18.2.0)(react@18.2.0)
@@ -2937,8 +2937,8 @@ packages:
     engines: {node: '>=6'}
     dev: false
 
-  /langchain@0.0.137:
-    resolution: {integrity: sha512-jJ/34ZYjMkqeYCFiYKFSKjBscqul4eZyuj9h2Uw2JWZi9Wz2dMd/4qlgWTYx4nxm0QrW2mRlxP+yei6A3u6+Zw==}
+  /langchain@0.0.138:
+    resolution: {integrity: sha512-1TlrsK7yeGJitZn3r+gyCewveuaDK+g36u5ARuwdxHWYsW432w0Emy+lgW2SWkAjwvyZEvyaBuyvmjJKuSD8VQ==}
     engines: {node: '>=18'}
     peerDependencies:
       '@aws-crypto/sha256-js': ^5.0.0
@@ -2955,7 +2955,7 @@ packages:
       '@clickhouse/client': ^0.0.14
       '@elastic/elasticsearch': ^8.4.0
       '@getmetal/metal-sdk': '*'
-      '@getzep/zep-js': ^0.6.3
+      '@getzep/zep-js': ^0.7.0
       '@gomomento/sdk': ^1.23.0
       '@google-ai/generativelanguage': ^0.2.1
       '@google-cloud/storage': ^6.10.1
@@ -3278,8 +3278,8 @@ packages:
       yallist: 4.0.0
     dev: false
 
-  /lucide-react@0.271.0(react@18.2.0):
-    resolution: {integrity: sha512-oc3/6m7gg/5E9FsX0F7t7DOuBiafsLTwg5/f0hJUJYePbmLmCXpZj1OESilmaUSwXGztawV7V12ZXBfAb8wRAA==}
+  /lucide-react@0.274.0(react@18.2.0):
+    resolution: {integrity: sha512-qiWcojRXEwDiSimMX1+arnxha+ROJzZjJaVvCC0rsG6a9pUPjZePXSq7em4ZKMp0NDm1hyzPNkM7UaWC3LU2AA==}
     peerDependencies:
       react: ^16.5.1 || ^17.0.0 || ^18.0.0
     dependencies:
