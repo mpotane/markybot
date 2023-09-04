@@ -44,6 +44,7 @@ export default function CodeBlock({
         style={oneDark}
         language={language}
         PreTag="div"
+        className="max-w-sm"
       >
         {value}
       </SyntaxHighlighter>
