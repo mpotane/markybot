@@ -23,10 +23,16 @@ import { MemoizedReactMarkdown } from "@/components/markdown";
 import remarkGfm from "remark-gfm";
 import remarkMath from "remark-math";
 import CodeBlock from "@/components/codeblock";
+import { useEffect, useRef } from "react";
 
 export default function Chat() {
   const { messages, input, handleInputChange, handleSubmit } = useChat();
   const { data: session, status } = useSession();
+  const chatContainerRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    chatContainerRef.current?.scrollIntoView(false);
+  }, [messages]);
 
   return (
     <main className="container">
@@ -83,6 +89,7 @@ export default function Chat() {
                 <div
                   key={m.id}
                   className={`${colorClassName} rounded-md mb-5 p-2 mx-auto`}
+                  ref={chatContainerRef}
                 >
                   {m.role === "user" ? "🧑 " : "🤖 "}
                   <MemoizedReactMarkdown
