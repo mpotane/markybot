@@ -5,7 +5,8 @@ import { ModeToggle } from "@/components/mode-toggle";
 import { useChat } from "ai/react";
 import { Input } from "@/components/ui/input";
 import { ScrollArea } from "@/components/ui/scroll-area";
-import { GitHubLogoIcon } from "@radix-ui/react-icons";
+import { GitHubLogoIcon, PlusCircledIcon } from "@radix-ui/react-icons";
+import { CornerDownLeft } from "lucide-react";
 import {
   Card,
   CardDescription,
@@ -129,7 +130,10 @@ export default function Chat() {
         onSubmit={handleSubmit}
         className="container grid place-items-center"
       >
-        <div className="mx-auto w-full max-w-md fixed flex items-center justify-center gap-2 bottom-0 mb-8 p-5">
+        <div className="mx-auto w-full max-w-md fixed flex items-center justify-center gap-2 bottom-0 mb-8 p-5 border rounded-lg">
+          <p>
+            <PlusCircledIcon />
+          </p>
           <Input
             className="md:w-[20rem]"
             maxLength={2048}
@@ -138,7 +142,9 @@ export default function Chat() {
             type="text"
             value={input}
           />
-          <Button type="submit">Send</Button>
+          <Button variant="outline" type="submit">
+            <CornerDownLeft />
+          </Button>
         </div>
       </form>
     </main>
