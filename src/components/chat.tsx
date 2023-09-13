@@ -22,7 +22,7 @@ import {
 } from "@/components/ui/dropdown-menu";
 import { MemoizedReactMarkdown } from "@/components/markdown";
 import remarkGfm from "remark-gfm";
-import remarkMath from "remark-math";
+import rehypeSanitize from "rehype-sanitize";
 import CodeBlock from "@/components/codeblock";
 import { useEffect, useRef } from "react";
 
@@ -95,7 +95,8 @@ export default function Chat() {
                   {m.role === "user" ? "🧑 " : "🤖 "}
                   <MemoizedReactMarkdown
                     className="relative"
-                    remarkPlugins={[remarkGfm, remarkMath]}
+                    remarkPlugins={[remarkGfm]}
+                    rehypePlugins={[rehypeSanitize]}
                     components={{
                       code({ node, inline, className, children, ...props }) {
                         const match = /language-(\w+)/.exec(className || "");
