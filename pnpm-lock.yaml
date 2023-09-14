@@ -57,11 +57,11 @@ dependencies:
     specifier: 13.4.19
     version: 13.4.19(eslint@8.49.0)(typescript@5.2.2)
   langchain:
-    specifier: ^0.0.146
-    version: 0.0.146
+    specifier: ^0.0.149
+    version: 0.0.149
   lucide-react:
-    specifier: 0.276.0
-    version: 0.276.0(react@18.2.0)
+    specifier: 0.277.0
+    version: 0.277.0(react@18.2.0)
   next:
     specifier: 13.4.19
     version: 13.4.19(react-dom@18.2.0)(react@18.2.0)
@@ -2927,8 +2927,8 @@ packages:
     engines: {node: '>=6'}
     dev: false
 
-  /langchain@0.0.146:
-    resolution: {integrity: sha512-WPkvlYNBH1cqPH0/mcDzfNjht5VJSD7dJMHCjhagLneVD7v69yMiNNkrme+DKHOqnPBbNUHDmlXGLAnTs4gpDQ==}
+  /langchain@0.0.149:
+    resolution: {integrity: sha512-7Ky7TqlUCbhx6hBwNW+dIyjCXLAPX/3WP1LFZ0ZGz/B0GaAHbyBkm8uuy1jMA3f7/8lJwZMWDL3639Idd7euWA==}
     engines: {node: '>=18'}
     peerDependencies:
       '@aws-crypto/sha256-js': ^5.0.0
@@ -2951,7 +2951,7 @@ packages:
       '@google-cloud/storage': ^6.10.1
       '@huggingface/inference': ^1.5.1
       '@mozilla/readability': '*'
-      '@notionhq/client': ^2.2.5
+      '@notionhq/client': ^2.2.10
       '@opensearch-project/opensearch': '*'
       '@pinecone-database/pinecone': '*'
       '@planetscale/database': ^1.8.0
@@ -3008,6 +3008,7 @@ packages:
       vectordb: ^0.1.4
       voy-search: 0.6.2
       weaviate-ts-client: ^1.4.0
+      web-auth-library: ^1.0.3
       youtube-transcript: ^1.0.6
       youtubei.js: ^5.8.0
     peerDependenciesMeta:
@@ -3165,6 +3166,8 @@ packages:
         optional: true
       weaviate-ts-client:
         optional: true
+      web-auth-library:
+        optional: true
       youtube-transcript:
         optional: true
       youtubei.js:
@@ -3278,8 +3281,8 @@ packages:
       yallist: 4.0.0
     dev: false
 
-  /lucide-react@0.276.0(react@18.2.0):
-    resolution: {integrity: sha512-ubP1Tyj67nsy84/ikelrFcjj7eEkD6hg9H/1Mhk22CGpbvPtEd3r8sMFQQ1YdpePx70Nt4oYIMfTPHZlag+ZLQ==}
+  /lucide-react@0.277.0(react@18.2.0):
+    resolution: {integrity: sha512-9epmznme+vW14V9d2rsMeLr3fMnf59lYDUOVUg6s7oVN22Zq8h4B30+3CIdFFV9UXCjPG5ZNKHfO/hf96cl46A==}
     peerDependencies:
       react: ^16.5.1 || ^17.0.0 || ^18.0.0
     dependencies:
