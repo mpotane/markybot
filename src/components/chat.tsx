@@ -6,7 +6,7 @@ import { useChat } from "ai/react";
 // import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { ScrollArea } from "@/components/ui/scroll-area";
-import { GitHubLogoIcon, PlusCircledIcon } from "@radix-ui/react-icons";
+import { GitHubLogoIcon } from "@radix-ui/react-icons";
 import { SendHorizonal } from "lucide-react";
 import {
   Card,
@@ -132,19 +132,16 @@ export default function Chat() {
         onSubmit={handleSubmit}
         className="container grid place-items-center"
       >
-        <div className="mx-auto w-4/5 max-w-md fixed flex items-center justify-center gap-2 bottom-0 pb-10 px-5 pt-5 border rounded-t-lg">
-          <button className="absolute translate-x-[-5.5rem] md:translate-x-[-9rem]">
-            <PlusCircledIcon />
-          </button>
+        <div className="mx-auto w-full max-w-md fixed flex items-center justify-center gap-2 bottom-0 py-2 rounded-t-lg">
           <Textarea
-            className="resize-none px-10 pt-[1.6rem]"
+            className="resize-none"
             placeholder="Type something..."
             maxLength={2048}
             onChange={handleInputChange}
             value={input}
           />
-          <button className="absolute translate-x-[5.5rem] md:translate-x-[9rem] hover:text-green-500" type="submit">
-            <SendHorizonal size={18} />
+          <button className="absolute translate-x-[7.5rem] sm:translate-x-[9rem] hover:text-green-500" type="submit">
+            <SendHorizonal />
           </button>
         </div>
       </form>
