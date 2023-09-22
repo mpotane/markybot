@@ -59,7 +59,7 @@ export default function Chat() {
               className="flex gap-2"
               variant="outline"
               size="sm"
-              onClick={() => signIn()}
+              onClick={() => signIn("github", { callbackUrl: "/" })}
             >
               <GitHubLogoIcon />
               <p>Login with github</p>
