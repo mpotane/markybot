@@ -7,7 +7,6 @@ import { useChat } from "ai/react";
 import { Textarea } from "@/components/ui/textarea";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { GitHubLogoIcon } from "@radix-ui/react-icons";
-import { SendHorizonal } from "lucide-react";
 import {
   Card,
   CardDescription,
@@ -83,56 +82,56 @@ export default function Chat() {
             </CardHeader>
           </Card>
         ) : (
-          <ScrollArea className="mx-auto w-full max-w-md py-5 px-2 md:px-5 flex flex-col h-[30rem] bg-gradient-to-br from-pink-700 to-violet-700 rounded">
-            {messages.map((m) => {
-              const colorClassName =
-                m.role === "user" ? "bg-sky-600" : "bg-slate-50 text-black";
-              return (
-                <div
-                  key={m.id}
-                  className={`${colorClassName} rounded-md mb-5 p-2 mx-auto`}
-                  ref={chatContainerRef}
-                >
-                  {m.role === "user" ? "🧑 " : "🤖 "}
-                  <MemoizedReactMarkdown
-                    className="relative"
-                    remarkPlugins={[remarkGfm]}
-                    rehypePlugins={[rehypeSanitize]}
-                    components={{
-                      code({ node, inline, className, children, ...props }) {
-                        const match = /language-(\w+)/.exec(className || "");
-
-                        if (inline) {
-                          return (
-                            <code className={className} {...props}>
-                              {children}
-                            </code>
-                          );
-                        }
-
-                        return (
-                          <CodeBlock
-                            language={(match && match[1]) || ""}
-                            value={String(children).replace(/\n$/, "")}
-                            {...props}
-                          />
-                        );
-                      },
-                    }}
+          <div className="p-0.5 bg-gradient-to-br from-rose-500 to-indigo-500 rounded mx-auto max-w-md">
+            <ScrollArea className="mx-auto w-full max-w-md py-5 px-2 md:px-5 flex flex-col h-[30rem] bg-black rounded">
+              {messages.map((m) => {
+                const colorClassName =
+                  m.role === "user" ? "bg-sky-600" : "bg-slate-50 text-black";
+                return (
+                  <div
+                    key={m.id}
+                    className={`${colorClassName} rounded-md mb-5 p-2 mx-auto`}
+                    ref={chatContainerRef}
                   >
-                    {m.content}
-                  </MemoizedReactMarkdown>
-                </div>
-              );
-            })}
-          </ScrollArea>
+                    {m.role === "user" ? "🧑 " : "🤖 "}
+                    <MemoizedReactMarkdown
+                      className="relative"
+                      remarkPlugins={[remarkGfm]}
+                      rehypePlugins={[rehypeSanitize]}
+                      components={{
+                        code({ node, inline, className, children, ...props }) {
+                          const match = /language-(\w+)/.exec(className || "");
+                          if (inline) {
+                            return (
+                              <code className={className} {...props}>
+                                {children}
+                              </code>
+                            );
+                          }
+                          return (
+                            <CodeBlock
+                              language={(match && match[1]) || ""}
+                              value={String(children).replace(/\n$/, "")}
+                              {...props}
+                            />
+                          );
+                        },
+                      }}
+                    >
+                      {m.content}
+                    </MemoizedReactMarkdown>
+                  </div>
+                );
+              })}
+            </ScrollArea>
+          </div>
         )}
       </section>
       <form
         onSubmit={handleSubmit}
         className="container grid place-items-center"
       >
-        <div className="mx-auto w-full max-w-md fixed flex items-center justify-center gap-2 bottom-0 py-2 rounded-t-lg">
+        <div className="mx-auto w-full max-w-md fixed grid gap-2 bottom-0 py-2 rounded-t-lg">
           <Textarea
             className="resize-none"
             placeholder="Type something..."
@@ -140,14 +139,15 @@ export default function Chat() {
             onChange={handleInputChange}
             value={input}
           />
-          <button
+          <Button
             title="Send Message"
-            className="absolute translate-x-[7.5rem] sm:translate-x-[9rem] hover:text-green-500"
             type="submit"
+            className="w-4/5 mx-auto"
+            size="sm"
+            variant="secondary"
           >
-            <SendHorizonal />
-            {""}
-          </button>
+            Send
+          </Button>
         </div>
       </form>
     </main>
