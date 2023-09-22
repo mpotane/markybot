@@ -7,7 +7,6 @@ import { useChat } from "ai/react";
 import { Textarea } from "@/components/ui/textarea";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { GitHubLogoIcon } from "@radix-ui/react-icons";
-import { SendHorizonal } from "lucide-react";
 import {
   Card,
   CardDescription,
