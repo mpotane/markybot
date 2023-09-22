@@ -140,8 +140,13 @@ export default function Chat() {
             onChange={handleInputChange}
             value={input}
           />
-          <button className="absolute translate-x-[7.5rem] sm:translate-x-[9rem] hover:text-green-500" type="submit">
+          <button
+            title="Send Message"
+            className="absolute translate-x-[7.5rem] sm:translate-x-[9rem] hover:text-green-500"
+            type="submit"
+          >
             <SendHorizonal />
+            {""}
           </button>
         </div>
       </form>
