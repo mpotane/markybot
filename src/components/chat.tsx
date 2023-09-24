@@ -83,7 +83,7 @@ export default function Chat() {
           </Card>
         ) : (
           <div className="p-0.5 bg-gradient-to-br from-rose-500 to-indigo-500 rounded mx-auto max-w-md">
-            <ScrollArea className="mx-auto w-full max-w-md py-5 px-2 md:px-5 flex flex-col h-[30rem] bg-black rounded">
+            <ScrollArea className="mx-auto w-full max-w-md py-5 px-2 md:px-5 flex flex-col h-[28rem] bg-black rounded">
               {messages.map((m) => {
                 const colorClassName =
                   m.role === "user" ? "bg-sky-600" : "bg-slate-50 text-black";
