@@ -1,10 +1,8 @@
 import "./globals.css";
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
 import { ThemeProvider } from "@/components/theme-provider";
 import { SessionProvider } from "./provider";
-
-const inter = Inter({ subsets: ["latin"] });
+import { GeistSans } from 'geist/font/sans'
 
 export const metadata: Metadata = {
   title: "Markybot - Your Personal AI Chatbot | Mpotane",
@@ -19,7 +17,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={inter.className}>
+      <body className={`${GeistSans.variable} font-sans`}>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           <SessionProvider>{children}</SessionProvider>
         </ThemeProvider>
