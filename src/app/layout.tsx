@@ -2,12 +2,12 @@ import "./globals.css";
 import type { Metadata } from "next";
 import { ThemeProvider } from "@/components/theme-provider";
 import { SessionProvider } from "./provider";
-import { GeistSans } from 'geist/font/sans'
+import { GeistSans } from "geist/font/sans";
 
 export const metadata: Metadata = {
-  title: "Markybot - Your Personal AI Chatbot | Mpotane",
+  title: "Markybot - Your Personal AI Chatbot | Mark Edzel Potane",
   description:
-    "Markybot is an AI-powered personal chatbot created by Mpotane using langchain and openai. Get instant responses to your queries and have a personalized conversation with Markybot today!",
+    "Markybot is an AI-powered personal chatbot created by Mark Edzel Potane using 🦜 langchain and 🤖 openai. ✅ Free to use | ✅ Opensource",
 };
 
 export default function RootLayout({
