@@ -27,7 +27,7 @@
     "clsx": "^2.0.0",
     "eslint": "8.53.0",
     "eslint-config-next": "14.0.2",
-    "langchain": "^0.0.185",
+    "langchain": "^0.0.189",
     "lucide-react": "0.292.0",
     "next": "14.0.2",
     "next-auth": "^4.23.1",
