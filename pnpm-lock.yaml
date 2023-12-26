@@ -60,11 +60,11 @@ dependencies:
     specifier: ^1.1.0
     version: 1.2.0(next@14.0.4)
   langchain:
-    specifier: ^0.0.209
-    version: 0.0.209
+    specifier: ^0.0.212
+    version: 0.0.212
   lucide-react:
-    specifier: 0.298.0
-    version: 0.298.0(react@18.2.0)
+    specifier: 0.302.0
+    version: 0.302.0(react@18.2.0)
   next:
     specifier: 14.0.4
     version: 14.0.4(react-dom@18.2.0)(react@18.2.0)
@@ -102,11 +102,11 @@ dependencies:
     specifier: ^2.0.0
     version: 2.1.0
   tailwindcss:
-    specifier: 3.3.7
-    version: 3.3.7
+    specifier: 3.4.0
+    version: 3.4.0
   tailwindcss-animate:
     specifier: ^1.0.7
-    version: 1.0.7(tailwindcss@3.3.7)
+    version: 1.0.7(tailwindcss@3.4.0)
   typescript:
     specifier: 5.3.3
     version: 5.3.3
@@ -327,8 +327,8 @@ packages:
       '@jridgewell/sourcemap-codec': 1.4.15
     dev: false
 
-  /@langchain/community@0.0.7:
-    resolution: {integrity: sha512-4O41IF8Cirqbb/SC7xNecxUIjuHX7HZkOlEgj98Zex+UuBF4aggPawUAJnP7+ak30PfOxH7NymnIWcs4MqRfxg==}
+  /@langchain/community@0.0.11:
+    resolution: {integrity: sha512-8L19AyzBueHrRtawxU4JstRtmzqsHK2jDJtSg/bv9ivto0kDKlILnauIDijcb09V/4mql2XolaS9r7eGe99yGA==}
     engines: {node: '>=18'}
     peerDependencies:
       '@aws-crypto/sha256-js': ^5.0.0
@@ -341,6 +341,7 @@ packages:
       '@aws-sdk/credential-provider-node': ^3.388.0
       '@clickhouse/client': ^0.2.5
       '@cloudflare/ai': ^1.0.12
+      '@datastax/astra-db-ts': 0.1.2
       '@elastic/elasticsearch': ^8.4.0
       '@getmetal/metal-sdk': '*'
       '@getzep/zep-js': ^0.9.0
@@ -428,6 +429,8 @@ packages:
       '@clickhouse/client':
         optional: true
       '@cloudflare/ai':
+        optional: true
+      '@datastax/astra-db-ts':
         optional: true
       '@elastic/elasticsearch':
         optional: true
@@ -564,8 +567,8 @@ packages:
       ws:
         optional: true
     dependencies:
-      '@langchain/core': 0.1.2
-      '@langchain/openai': 0.0.6
+      '@langchain/core': 0.1.4
+      '@langchain/openai': 0.0.8
       flat: 5.0.2
       langsmith: 0.0.49
       uuid: 9.0.1
@@ -574,8 +577,8 @@ packages:
       - encoding
     dev: false
 
-  /@langchain/core@0.1.2:
-    resolution: {integrity: sha512-BX9vBovUi+FQLsUy+kh32kGtNU3Iv5GIBDB63xfCvAPefrt/WnqdsqwYnaXMB2MohBcZavIVMewHymsgiEYNcQ==}
+  /@langchain/core@0.1.4:
+    resolution: {integrity: sha512-Y3/mQLEiQ78ZbsTGYvPRj5bpvrhpTAcsbdyEtlYEvjMLbehEADfjQ41G9zc7U/emkrGtHRmxWO1ISmoeXeDmyQ==}
     engines: {node: '>=18'}
     dependencies:
       ansi-styles: 5.2.0
@@ -590,11 +593,11 @@ packages:
       zod: 3.22.4
     dev: false
 
-  /@langchain/openai@0.0.6:
-    resolution: {integrity: sha512-t4ZzBAPfBCHk56MyS/BlSzEHyXEJ6LLhw3QTjqt8+QKfl8U31pSKDOe3xuVveM2YqpaoVAqWY27DHUKNTZ0gNg==}
+  /@langchain/openai@0.0.8:
+    resolution: {integrity: sha512-F8DD6vs5BvMAHiDprINWCVf7jyNaYHp2zAqHwYij3+YAKsgIORm2EQvI6YtT3qPnGghpE3qz8H3DKjTNPywIzQ==}
     engines: {node: '>=18'}
     dependencies:
-      '@langchain/core': 0.1.2
+      '@langchain/core': 0.1.4
       js-tiktoken: 1.0.8
       openai: 4.21.0
       zod: 3.22.4
@@ -3329,8 +3332,8 @@ packages:
       json-buffer: 3.0.1
     dev: false
 
-  /langchain@0.0.209:
-    resolution: {integrity: sha512-5+ixk2z6XP7NiPqAinrolwd4LKA4b+gWDiFHGaMnk3AHeOnquUHEEqDXghuQrMpr93p8egwO9AgmpKpAIvznFg==}
+  /langchain@0.0.212:
+    resolution: {integrity: sha512-zPcnAX3t1RuyWkbEkyqlIdR29j51Eylz7rcDcqET1baquR/r9xuk7P/HAJ6TFowiXDUg10d5YBD6VBvjwF/WDA==}
     engines: {node: '>=18'}
     peerDependencies:
       '@aws-sdk/client-s3': ^3.310.0
@@ -3364,7 +3367,7 @@ packages:
       ignore: ^5.2.0
       ioredis: ^5.3.2
       jsdom: '*'
-      mammoth: '*'
+      mammoth: ^1.6.0
       mongodb: ^5.2.0
       node-llama-cpp: '*'
       notion-to-md: ^3.1.0
@@ -3489,9 +3492,9 @@ packages:
         optional: true
     dependencies:
       '@anthropic-ai/sdk': 0.9.1
-      '@langchain/community': 0.0.7
-      '@langchain/core': 0.1.2
-      '@langchain/openai': 0.0.6
+      '@langchain/community': 0.0.11
+      '@langchain/core': 0.1.4
+      '@langchain/openai': 0.0.8
       binary-extensions: 2.2.0
       expr-eval: 2.0.2
       js-tiktoken: 1.0.8
@@ -3514,6 +3517,7 @@ packages:
       - '@aws-sdk/client-lambda'
       - '@clickhouse/client'
       - '@cloudflare/ai'
+      - '@datastax/astra-db-ts'
       - '@elastic/elasticsearch'
       - '@getmetal/metal-sdk'
       - '@getzep/zep-js'
@@ -3649,8 +3653,8 @@ packages:
       yallist: 4.0.0
     dev: false
 
-  /lucide-react@0.298.0(react@18.2.0):
-    resolution: {integrity: sha512-tWoxZ663Zf/n8VxXTHnTJsU/w1ysWT1LORnIL1pzqElFdSqBhWbZeJ3sLdCZ5FpzpbkpkYEtluhuTyG2BTDYNQ==}
+  /lucide-react@0.302.0(react@18.2.0):
+    resolution: {integrity: sha512-JZX+1fjpqxvQmEgItvPOAwRlqf0Eg9dSZMxljA2/V2M6dluOhQCPBhewIlSJWgkNu0M36kViOgmTAMnDaAMOFw==}
     peerDependencies:
       react: ^16.5.1 || ^17.0.0 || ^18.0.0
     dependencies:
@@ -5291,16 +5295,16 @@ packages:
       '@babel/runtime': 7.23.6
     dev: false
 
-  /tailwindcss-animate@1.0.7(tailwindcss@3.3.7):
+  /tailwindcss-animate@1.0.7(tailwindcss@3.4.0):
     resolution: {integrity: sha512-bl6mpH3T7I3UFxuvDEXLxy/VuFxBk5bbzplh7tXI68mwMokNYd1t9qPBHlnyTwfa4JGC4zP516I1hYYtQ/vspA==}
     peerDependencies:
       tailwindcss: '>=3.0.0 || insiders'
     dependencies:
-      tailwindcss: 3.3.7
+      tailwindcss: 3.4.0
     dev: false
 
-  /tailwindcss@3.3.7:
-    resolution: {integrity: sha512-pjgQxDZPvyS/nG3ZYkyCvsbONJl7GdOejfm24iMt2ElYQQw8Jc4p0m8RdMp7mznPD0kUhfzwV3zAwa80qI0zmQ==}
+  /tailwindcss@3.4.0:
+    resolution: {integrity: sha512-VigzymniH77knD1dryXbyxR+ePHihHociZbXnLZHUyzf2MMs2ZVqlUrZ3FvpXP8pno9JzmILt1sZPD19M3IxtA==}
     engines: {node: '>=14.0.0'}
     hasBin: true
     dependencies:
