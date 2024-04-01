@@ -43,7 +43,7 @@ dependencies:
     version: 10.4.18(postcss@8.4.35)
   bun-types:
     specifier: ^1.0.2
-    version: 1.0.36
+    version: 1.1.0
   class-variance-authority:
     specifier: ^0.7.0
     version: 0.7.0
@@ -1980,8 +1980,8 @@ packages:
       update-browserslist-db: 1.0.13(browserslist@4.23.0)
     dev: false
 
-  /bun-types@1.0.36:
-    resolution: {integrity: sha512-gaIb1SyhB0JZfIEg73/kSFhqolUqJXC68peguhXGwqr27HuvI8nkD0LTIHp/1DY4cNadfXHYgYrZIWX7oEoXlg==}
+  /bun-types@1.1.0:
+    resolution: {integrity: sha512-GhMDD7TosdJzQPGUOcQD5PZshvXVxDfwGAZs2dq+eSaPsRn3iUCzvpFlsg7Q51bXVzLAUs+FWHlnmpgZ5UggIg==}
     dependencies:
       '@types/node': 20.11.30
       '@types/ws': 8.5.10
