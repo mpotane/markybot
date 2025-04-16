@@ -26,7 +26,7 @@
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.0.0",
     "eslint": "9.3.0",
-    "eslint-config-next": "15.2.4",
+    "eslint-config-next": "15.3.0",
     "geist": "^1.1.0",
     "langchain": "^0.3.0",
     "lucide-react": "0.424.0",
@@ -44,7 +44,7 @@
     "tailwind-merge": "^3.0.0",
     "tailwindcss": "4.0.9",
     "tailwindcss-animate": "^1.0.7",
-    "typescript": "5.8.2",
+    "typescript": "5.8.3",
     "zod": "^3.22.2"
   }
 }
